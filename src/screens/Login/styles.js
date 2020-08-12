@@ -1,19 +1,19 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.SafeAreaView`
+export const Container = styled.KeyboardAvoidingView`
   flex: 1;
 `;
 
-export const Header = styled.View`
+export const Header = styled.SafeAreaView`
     height: 150px;
     background-color: #3574CB;
     justify-content: center;
-    padding-left: 20px;
 `;
 
 export const HeaderTitle = styled.Text`
     color: #fff;
     font-size: 27px;
+    margin-left: 20px;
 `;
 
 export const Menu = styled.View`
@@ -29,4 +29,28 @@ export const MenuItem = styled.TouchableHighlight`
 export const MenuItemText = styled.Text`
     color: #FFF;
     font-size: 16px;
-`;  
+`;
+
+export const Input = styled.TextInput`
+  margin: 10px 20px;
+  border-bottom-width: 2px;
+  border-bottom-color: #999;
+  height: 40px;
+  font-size: 16px;
+  color: #333;
+`;
+
+export const ActionButton = styled.TouchableHighlight`
+    background-color: #3574CB;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0 2px 2px #999;
+`;
+
+export const ActionButtonText = styled.Text`
+    color: #fff;
+    font-size: 16px;
+`;

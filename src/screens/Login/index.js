@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
-import { Container, Header, HeaderTitle, Menu, MenuItem, MenuItemText} from './styles';
+import {StatusBar, Platform} from 'react-native';
+import { Container, Header, HeaderTitle, Menu, MenuItem, MenuItemText, Input, ActionButton, ActionButtonText} from './styles';
 const Page = () => {
     const [activeMenu, setActiveMenu] = useState('signin')
 
 
     return (
-        <Container>
+        <Container behavior={Platform.OS === 'ios' ? 'padding' : null}>
+            <StatusBar  barStyle="light-content"/>
             <Header> 
                 <HeaderTitle>
                         DevsUber
@@ -19,6 +21,25 @@ const Page = () => {
                     <MenuItemText>Cadastrar</MenuItemText>
                 </MenuItem>
             </Menu>
+            {activeMenu == 'signup' && 
+            <Input placeholder="Nome" />
+            }
+            <Input placeholder="E-mail"/>
+            <Input placeholder="Senha"/>
+
+            {activeMenu == 'signin' &&
+            <ActionButton>
+                <ActionButtonText> Login </ActionButtonText>
+            </ActionButton> 
+            }   
+            {activeMenu == 'signup' &&
+            <ActionButton>
+                <ActionButtonText> Cadastrar </ActionButtonText>
+            </ActionButton> 
+            }
+            
+            
+            
 
             
         </Container>
