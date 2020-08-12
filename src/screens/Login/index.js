@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {StatusBar, Platform} from 'react-native';
+import useDevsUberApi from '../../useDevsUberApi';
 import { Container, Header, HeaderTitle, Menu, MenuItem, MenuItemText, Input, ActionButton, ActionButtonText} from './styles';
 const Page = () => {
+    const api = useDevsUberApi();
     const [activeMenu, setActiveMenu] = useState('signin')
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
