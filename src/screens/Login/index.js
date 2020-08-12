@@ -3,6 +3,9 @@ import {StatusBar, Platform} from 'react-native';
 import { Container, Header, HeaderTitle, Menu, MenuItem, MenuItemText, Input, ActionButton, ActionButtonText} from './styles';
 const Page = () => {
     const [activeMenu, setActiveMenu] = useState('signin')
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
 
     return (
@@ -22,10 +25,10 @@ const Page = () => {
                 </MenuItem>
             </Menu>
             {activeMenu == 'signup' && 
-            <Input placeholder="Nome" />
+            <Input value={name} onChangeText={t => setName(t)} placeholder="Nome" placeholderTextColor="#999" />
             }
-            <Input placeholder="E-mail"/>
-            <Input placeholder="Senha"/>
+            <Input value={email} onChangeText={t => setEmail(t)} autoCapitalize="none" keyboardType="email-address" placeholder="E-mail"  placeholderTextColor="#999"/>
+            <Input value={password} onChangeText={t => setPassword(t)}  placeholder="Senha" placeholderTextColor="#999"/>
 
             {activeMenu == 'signin' &&
             <ActionButton>
